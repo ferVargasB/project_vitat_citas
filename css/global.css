@@ -15,8 +15,10 @@ body {
 }
 
 
+.navbar-light .navbar-nav .nav-link{
+    color: black;
+}
 
-.col-md-12 {
-    width: 100%;
-    background-color: red;
+.main-content .container{
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
