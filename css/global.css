@@ -1,24 +1,38 @@
 body {
-    background-color: #FFFFFF;
+  background-color: #ffffff;
 }
 
-.top-header{
-    background-color: inherit;
+.top-header {
+  background-color: inherit;
 }
 
-.container{
-    background-color: #F0F8FF;
+.container {
+  background-color: #f0f8ff;
 }
 
 .nav-text-link {
-    font-size: 1.5rem;
+  font-size: 1.5rem;
 }
 
-
-.navbar-light .navbar-nav .nav-link{
-    color: black;
+.navbar-light .navbar-nav .nav-link {
+  color: black;
 }
 
-.main-content .container{
-    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+.main-content .container {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.col-md-4 .card-img {
+    margin-top: 30%;
+}
+
+footer .container {
+  background-color: inherit;
+}
+
+@media only screen and (max-width: 768px) {
+  .col-md-4 .card-img {
+      margin-left: 30%;
+      width: unset;
+  }
 }
