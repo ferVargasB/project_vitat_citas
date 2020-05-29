@@ -10,7 +10,7 @@
         <title>Desarrollo Urbano</title>
    </head>
     <body>
-    <header> 
+    <header id="fondo"> 
         
     <div class="row"  > 
         <div class="col-sm-2 " align="center" >
@@ -28,7 +28,12 @@
          </div>
     </div>  
     <style>
-        header { background: rgb(11, 94, 247); }
+        header 
+        { 
+            background: rgb(11, 94, 247);
+            
+}
+             
       </style>
    
           <!--header { background: rgba(179,220,237,1); }-->
@@ -89,6 +94,9 @@
                 {
                      background: rgb(11, 94, 247); 
                      
+
+    
+                     
                      }
                 #im 
                 { 
@@ -141,13 +149,19 @@
      
       
     
- <a  class="btn btn-info btn-lg " href="https://ventanillavirtualguanajuato.net/#!/index">
+ <a  class="btn btn-info btn-lg " href="https://ventanillavirtualguanajuato.net/#!/index" id="botontramitar">
           <span class="glyphicon glyphicon-calendar" ></span> Tramitar
         </a>
       
 
                    </div>
-                                
+                            <style>
+                       #botontramitar
+                       {
+                           background-color: rgb(11, 94, 247);
+                       }
+
+                            </style>    
                             </form>
                            
                                 
@@ -190,22 +204,24 @@
     </style>
       
     
- <a  class="btn btn-info btn-lg" href="vitat.html">
+ <a  class="btn btn-info btn-lg" href="vitat.html" id="botonagendar">
           <span class="glyphicon glyphicon-calendar" ></span> Agendar
         </a>
-      
-
-                   </div>
-                                
-                            </form>
-                           
-                                
-                        </div>
+                       </div>
+                          </form>
+                      </div>
                     </div>
-                   
+                    
+                    <style>
+                        #botonagendar
+                        {
+                            background-color: rgb(11, 94, 247);
+                        }
+        
+                             </style>
                 </div>
             </div>
-                        </div>
+                      </div>
                         <div class="col-md-4" >
                         <div class="container">
                 <div class="row">
@@ -242,7 +258,7 @@
      
       <!--<embed src="Padron de PERITOS ESPECIALIZADOS 2020 - Abril (1).pdf" type="application/pdf" width="100%" height="600px" />-->
     <div >
- <a href="Padron de PERITOS ESPECIALIZADOS 2020 - Abril (1).pdf" class="btn btn-info btn-lg" target="_blank"  > 
+ <a href="Padron de PERITOS ESPECIALIZADOS 2020 - Abril (1).pdf" class="btn btn-info btn-lg" target="_blank"  id="botoningresar" > 
 
           <span class="glyphicon glyphicon-list-alt"></span> Ingresar
         </a>
@@ -253,7 +269,13 @@
                                 
                         </div>
                     </div>
-                  
+                    <style>
+                        #botoningresar
+                        {
+                            background-color: rgb(11, 94, 247);
+                        }
+ 
+                             </style>
                 </div>
                         </div>
                        
@@ -267,7 +289,12 @@
                <div class="col-md-0" >
                          
                         </div>
-            <div class="col-md-12">
+                        <!--carousel-->
+                        <div class="col-md-2">
+hola
+
+                        </div>
+            <div class="col-md-8">
              <div id="carousel-1" class="carousel slide" data-ride="carousel">
                 <!---indicadores--->
                 <ol class="carousel-indicators">
@@ -308,7 +335,19 @@
                  </a>
                 </div>
             </div>
-        
+            <div class="col-md-2" id="aviso1">
+                <p ><h2 style="color:white" align = "center">Tramites En Linea</h2> 
+                    <h3 style="color:white" align = "center">Ahora puedes realizar tus tramiste mas rapido a traves de nuestro portal.</h3>
+                </p>
+               <style>
+          #aviso1
+          {
+              background-color: blue;
+          }
+
+
+               </style> 
+                                        </div>
            <div class="col-md-0" >
                          
                         </div>
