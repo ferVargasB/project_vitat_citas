@@ -109,74 +109,84 @@
         </div>
                
            <br>
-       
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-3">
-                        
-                    </div>
-                    <div class="col-md-6">
-                        <div class="well well-sm">
-                            <form class="form-horizontal" method="post">
-                                <fieldset>
-                                    <legend class="text-center header">Contact us</legend>
-            
-                                    <div class="form-group">
-                                        <span class="col-md-1 col-md-offset-2 text-center"></span>
-                                        <div class="col-md-8">
-                                            <i class="fa fa-user icon"></i>
-                                            <input id="fname" name="name" type="text" placeholder="First Name" class="form-control" >                                            
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <span class="col-md-1 col-md-offset-2 text-center"></span>
-                                        <div class="col-md-8">
-                                            <i class="fa fa-user icon"></i>
-                                            <input id="lname" name="name" type="text" placeholder="Last Name" class="form-control">
-                                        </div>
-                                    </div>
-            
-                                    <div class="form-group">
-                                        <span class="col-md-1 col-md-offset-2 text-center"></span>
-                                        <div class="col-md-8">
-                                            <i class="fa fa-envelope-o icon"></i>
-                                            <input id="email" name="email" type="text" placeholder="Email Address" class="form-control">
-                                        </div>
-                                    </div>
-            
-                                    <div class="form-group">
-                                        <span class="col-md-1 col-md-offset-2 text-center"></span>
-                                        <div class="col-md-8">
-                                            <i class="fa fa-phone-square icon"></i>
-                                            <input id="phone" name="phone" type="text" placeholder="Phone" class="form-control">
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="form-group">
-                                        <span class="col-md-1 col-md-offset-2 text-center"></span>
-                                        
-                                        <div class="col-md-8">
-                                            <i class="fa fa-pencil-square-o icon"></i>
-                                            <textarea class="form-control" id="message" name="message" placeholder="Enter your massage for us here. We will get back to you within 2 business days." rows="7"></textarea>
-                                        </div>
-                                        
-                                    </div>
-                       
-                                    <div class="form-group">
-                                        <div class="col-md-12 text-center">
-                                            <button type="submit" class="btn btn-primary btn-lg">Enviar</button>
-                                        </div>
-                                    </div>
-                                </fieldset>
-                            </form>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        
-                    </div>
-                </div>
+           <br>
+           <div class="container" style="background-color: white;">
+            <div class="row">
+              <div class="col-md-3">
+           
+              </div>
+              <div class="col-md-6">
+                <legend class="text-center header">Informacion de Contacto</legend>
+              </div>
+              <div class="col-md-3">
+               
+              </div>
             </div>
+          </div>
+           <div class="container" style="background-color: white;">
+            <div class="row">
+              <div class="col-md-3">
+              
+              </div>
+              <div class="col-md-6">
+                <form>
 
+                    <div class="form-group"> <!-- Full Name -->
+                        <label for="Nombre_id" class="control-label">Nombre:</label>
+                        <input type="text" class="form-control" id="Nombre_id" name="Nombre" placeholder="">
+                    </div>    
+                
+                    <div class="form-group"> <!-- Street 1 -->
+                        <label for="Direccion_id" class="control-label">Direccion:</label>
+                        <input type="text" class="form-control" id="Direccion_id" name="street1" placeholder="">
+                    </div>                    
+                                            
+                    <div class="form-group"> <!-- Street 2 -->
+                        <label for="numero_id" class="control-label">Numero Telefonico</label>
+                        <input type="text" class="form-control" id="numero_id" name="street2" placeholder="">
+                    </div>    
+                
+                    <div class="form-group"> <!-- State Button -->
+                        <label for="dirtra_id" class="control-label">Direccion de Tramite</label>
+                        <select class="form-control" id="dirtra_id">
+                            <option value="DirIm">Direccion de Imagen Urbana y Gestion de Centro Historico</option>
+                            <option value="DirAd">Direccion de Administracion Urbana</option>
+                    
+                            
+                       
+                           
+                        </select>                    
+                    </div>                                   
+                                            
+                    <div class="form-group"> <!-- State Button -->
+                        <label for="dir_id" class="control-label"> Tramite</label>
+                        <select class="form-control" id="dir_id">
+                            <option value="Us">Uso de Suelo</option>
+                            <option value="Al">Alineamiento</option>
+                            <option value="Cla">Clasificacion</option>
+                            <option value="Div">Division de Predios</option>
+                            
+                       
+                           
+                        </select>                    
+                    </div>
+                    
+                    <div class="form-group"> <!-- Zip Code-->
+                        <label for="cod_id" class="control-label">Codigo POstal</label>
+                        <input type="text" class="form-control" id="cod_id" name="Codigo Postal" placeholder="#####">
+                    </div>        
+                    
+                    <div class="form-group"> <!-- Submit Button -->
+                        <button type="submit" class="btn btn-primary">Acepar</button>
+                    </div>     
+                    
+                </form>
+              </div>
+              <div class="col-md-3">
+                
+              </div>
+            </div>
+          </div>
     
         <script src="http://code.jquery.com/jquery-latest.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
