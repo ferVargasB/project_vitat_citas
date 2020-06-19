@@ -161,6 +161,9 @@
                     <div class="form-group"> <!-- State Button -->
                         <label for="dirtra_id" class="control-label">Direccion de Tramite</label>
                         <select class="form-control" id="dirtra_id">
+                            <option value="0" >Selecciona una opción</option>
+                            <option value="1" >Direccion de Imagen Urbana y Gestion de Centro Historico</option>
+                            <option value="2" type="button" >Direccion de Administracion Urbana</option>
                             <option value="DirIm1"  >Direccion de Imagen Urbana y Gestion de Centro Historico</option>
                             <option value="DirIm"  >Direccion de Administracion Urbana</option>
                     
@@ -171,27 +174,21 @@
                     </div>                                   
                                          
                     <div class="form-group"> <!-- State Button -->
-                        <label for="dir_id" class="control-label"> Tramite</label>
-                        <select class="form-control" id="dir_id" >
-                            <option value="Us">Uso de Suelo.</option>
-                            <option value="Al">Alineamiento.</option>
-                            <option value="Cla">Clasificacion.</option>
-                            <option value="Div">Division de Predios.</option>
+                        <label for="tramites_imagen" class="control-label"> Tramite</label>
+                        <select class="form-control" id="tramites_imagen_urbana" disabled >
+                            <option value="1">Uso de Suelo</option>
+                            <option value="2">Alineamiento</option>
+                            <option value="3">Clasificacion</option>
+                            <option value="4">Division de Predios</option>
                             </select>    
                          </div>
                          <div class="form-group"> <!-- State Button -->
-                            <label for="dir_id" class="control-label"></label>
-                            <select class="form-control" id="dir_id2"  >
-                                <option value="Us">Aviso de Obra Menor.</option>
-                                <option value="Al">Permiso de Construccion Menor de 42 M2.</option>
-                                <option value="Cla">Permiso de Construccion Mayor de 40 M2.</option>
-                                <option value="Div">Permiso de Construccion Especial</option>
-                                <option value="Div">Aviso de Suspensión Temporal de Obra.</option>
-                                <option value="Div">Permiso Para Colocacion de Anuncio.</option>
-                                <option value="Div">Permiso Para colocacion de Toldo,</option>
-                                <option value="Div">Permiso Para Colocacion de Anuncios,</option>
-                                <option value="Div">Permiso Para COolocacion de Publicidad Movil.</option>
-                                <option value="Div">NUevo Igreso o Refrendo como DRO.</option>
+                            <label for="tramites_admin_urbana" class="control-label"></label>
+                            <select class="form-control" id="tramites_admin_urbana" disabled>
+                                <option value="1">Permiso de Construccion</option>
+                                <option value="2">Alineamiento</option>
+                                <option value="3">Clasificacion</option>
+                                <option value="4">Division de Predios</option>
                                 </select>    
                           <br>
 
@@ -344,7 +341,7 @@
 
         </style>
 
-
+        <script src="./js/vitat.js"></script>
     </body>
 
 
