@@ -51,7 +51,7 @@ class Cita extends CI_Controller {
 			
 			$respuesta['estatus'] = '0';
 			$respuesta['data'] = $this->citas_habiles;
-			echo  json_encode( $respuesta );
+			echo json_encode( $respuesta );
 		
 		//Si todo el día está ocupado
 		} elseif ( count($citas_reservadas) == 13 ){

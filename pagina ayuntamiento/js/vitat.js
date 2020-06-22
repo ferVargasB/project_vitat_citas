@@ -1,4 +1,3 @@
-console.log('ready!');
 const servidor = 'http://localhost/project_vitat_citas/back_citas/index.php/Cita/'
 
 const direccion = document.getElementById('dirtra_id');
@@ -47,26 +46,75 @@ function showTramitesAdminUrbana(tramites_admin, tramites_imagen) {
     }
 }
 
-function show_citas(data){
-    let seleciona_hora_element = document.getElementById('horas_disponibles');
+function validar_citas(data) {
+    let { estatus, data: horas_disponibles } = data;
 
-    const {data:horas_disponibles} = data;
+    //Si hay citas dispoibles
+    if (estatus === '0' || estatus === '2') {
 
-    Object.values(horas_disponibles).forEach(element => {
-        let option = document.createElement('option');
-        option.value = element;
-        option.innerText = element;
+        validar_select_element(horas_disponibles);
 
-        seleciona_hora_element.append(option);
-    });
+        //No hay citas disponibles en el día    
+    } else if (estatus === '1') {
+        Swal.fire({
+            title: 'Error!',
+            text: 'No hay citas disponibles para este día, intenta con otro',
+            icon: 'error'
+        });
+    } else {
+        console.log('Ninguna opcion');
+    }
 
-    seleciona_hora_element.removeAttribute('disabled');
 }
 
+function validar_select_element(citas) {
+    
+    let seleciona_hora_element = document.getElementById('horas_disponibles');
+    let claves_horas = Object.keys(citas);
+    let horas = Object.values(citas);
+
+    if (seleciona_hora_element.length != 0) {
+        update_citas(seleciona_hora_element);
+        show_citas(seleciona_hora_element, claves_horas, horas);
+    } else {
+        show_citas(seleciona_hora_element, claves_horas, horas);
+    }
+
+    seleciona_hora_element.removeAttribute('disabled');
+    console.log(seleciona_hora_element.length);
+}
+
+function update_citas(select_element) {
+    while (select_element.length != 0) {
+        select_element.removeChild(select_element.firstElementChild);
+    }
+}
+
+function show_citas(seleciona_hora_element, claves_horas, horas) {
+    for (let index = 0; index < claves_horas.length; index++) {
+        let option = document.createElement('option');
+        option.value = claves_horas[index];
+        option.innerText = horas[index];
+
+        seleciona_hora_element.append(option);
+    }
+}
+
+
 async function get_citas_dia(servidor, fecha_solicitada) {
-    const response = await fetch(`${servidor}get_citas_dia/${fecha_solicitada}`,);
-    const responseJson = await response.json();
-    console.log(responseJson);
-    show_citas(responseJson);
+
+    try {
+
+        const response = await fetch(`${servidor}get_citas_dia/${fecha_solicitada}`,);
+        const responseJson = await response.json();
+        validar_citas(responseJson);
+
+    } catch (error) {
+        Swal.fire({
+            title: 'Error!',
+            text: 'Ocurrió un error, vuelve a intentarlo',
+            icon: 'error'
+        });
+    }
 }
 
