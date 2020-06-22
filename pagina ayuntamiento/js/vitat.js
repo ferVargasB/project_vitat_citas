@@ -47,10 +47,26 @@ function showTramitesAdminUrbana(tramites_admin, tramites_imagen) {
     }
 }
 
+function show_citas(data){
+    let seleciona_hora_element = document.getElementById('horas_disponibles');
+
+    const {data:horas_disponibles} = data;
+
+    Object.values(horas_disponibles).forEach(element => {
+        let option = document.createElement('option');
+        option.value = element;
+        option.innerText = element;
+
+        seleciona_hora_element.append(option);
+    });
+
+    seleciona_hora_element.removeAttribute('disabled');
+}
 
 async function get_citas_dia(servidor, fecha_solicitada) {
     const response = await fetch(`${servidor}get_citas_dia/${fecha_solicitada}`,);
     const responseJson = await response.json();
     console.log(responseJson);
+    show_citas(responseJson);
 }
 
