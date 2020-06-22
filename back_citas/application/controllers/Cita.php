@@ -39,7 +39,43 @@ class Cita extends CI_Controller {
 
 	public function get_citas_dia($fecha_solicitada)
 	{
-		$citas = $this->Cita_model->get_citas_dia($fecha_solicitada);
-		echo json_encode($citas);
+		$respuesta = array(
+			'estatus' => 'error',
+			'data' => '0'
+		);
+
+		$citas_reservadas = $this->Cita_model->get_citas_dia($fecha_solicitada);
+
+		//Si no hay ninguna cita reservada en el dia
+		if ( count($citas_reservadas) == 0 ){
+			
+			$respuesta['estatus'] = '0';
+			$respuesta['data'] = $this->citas_habiles;
+			echo  json_encode( $respuesta );
+		
+		//Si todo el día está ocupado
+		} elseif ( count($citas_reservadas) == 13 ){
+			
+			$respuesta['estatus'] = '1';
+			echo json_encode( $respuesta );
+
+		} else {
+			
+			$respuesta['estatus'] = '2';
+			$respuesta['data'] = $this->get_citas_disponibles( $citas_reservadas );
+			echo json_encode( $respuesta );
+		}
+
+		die();
+	}
+
+	private function get_citas_disponibles($citas_reservadas)
+	{
+		$citas_ocupadas = null;
+		foreach ($citas_reservadas as $cita){
+			$citas_ocupadas[ $cita->clave_hora ] = $cita->hora_cita; 
+		}
+
+		return array_diff_key($this->citas_habiles, $citas_ocupadas);
 	}
 }

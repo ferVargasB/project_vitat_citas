@@ -7,9 +7,9 @@ class Cita_model extends CI_Model {
 	{
 		$this->db->select('*');
 		$this->db->from('citas');
-		$query = $this->db->where('fecha_cita', $fecha_solicitada);
-		//$query = $this->db->get('citas')->where('fecha_cita', $fecha_solicitada);  // Produces: SELECT * FROM mytable
-		return json_encode($query->result());
+		$this->db->where('fecha_cita', $fecha_solicitada);
+		$query = $this->db->get();
+		return $query->result();
 	}
 
 }
