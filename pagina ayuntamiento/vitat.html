@@ -23,8 +23,8 @@
             </div>
                 <div class="col-sm-8" align="center">
                     
-                  <h1  >
-                         <a class=" font: small-caps 100%/200% serif;" style="color:#FFFFFF";> Ventanilla Virtual de Trámites <br> Territoriales<br>VITAT</a> 
+                  <h1   >
+                         <a class=" font: small-caps 100%/200% serif;" style="color:#FFFFFF"; href="index.html"> Ventanilla Virtual de Trámites <br> Territoriales<br>VITAT</a> 
                     </h1>
              </div>
             <div class="col-sm-2" align="center" >
@@ -117,7 +117,7 @@
            
               </div>
               <div class="col-md-6">
-                <legend class="text-center header">Informacion de Contacto</legend>
+                <legend class="text-center header">Informaci&oacute;n de Contacto</legend>
               </div>
               <div class="col-md-3">
                
@@ -126,12 +126,13 @@
           </div>
            <div class="container" style="background-color: white;">
             <div class="row">
+                <div>
               <div class="col-md-3">
               
               </div>
               <div class="col-md-6">
                 <form>
-
+               <div>
                     <div class="form-group"> <!-- Full Name -->
                         <label for="Nombre_id" class="control-label">Nombre:</label>
                         <input type="text" class="form-control" id="Nombre_id" name="Nombre" placeholder="">
@@ -150,49 +151,71 @@
                     <div class="form-group"> <!-- Street 2 -->
                         <label for="ncorreo_id" class="correo-label">Correo Electronico</label>
                         <input type="text" class="form-control" id="correo_id" name="Correo Electronico" placeholder="">
-                    </div>   
-
-                    <div class="form-group"> <!-- Zip Code-->
-                        <label for="cod_id" class="control-label">Codigo Postal</label>
-                        <input type="text" class="form-control" id="cod_id" name="Codigo Postal" placeholder="#####">
-                    </div>  
-
-                    <div class="form-group"> <!-- State Button -->
+                    </div>    
+                       <div class="form-group"> <!-- State Button -->
                         <label for="dirtra_id" class="control-label">Direccion de Tramite</label>
                         <select class="form-control" id="dirtra_id">
-                            <option value="DirIm">Direccion de Imagen Urbana y Gestion de Centro Historico</option>
-                            <option value="DirAd">Direccion de Administracion Urbana</option>
-                    
-                            
-                       
-                           
+                            <option value="0" >Selecciona una opción</option>
+                            <option value="1" >Direccion de Imagen Urbana y Gestion de Centro Historico</option>
+                            <option value="2" >Direccion de Administracion Urbana</option>       
                         </select>                    
                     </div>                                   
-                                          
+                                         
                     <div class="form-group"> <!-- State Button -->
-                        <label for="dir_id" class="control-label"> Tramite</label>
-                        <select class="form-control" id="dir_id">
-                            <option value="Us">Uso de Suelo</option>
-                            <option value="Al">Alineamiento</option>
-                            <option value="Cla">Clasificacion</option>
-                            <option value="Div">Division de Predios</option>
-                            
-                       
-                           
-                        </select>                    
+                        <label for="tramites_imagen" class="control-label"> Tramite</label>
+                        <select class="form-control" id="tramites_admin_urbana" disabled >
+                            <option value="1">Uso de Suelo</option>
+                            <option value="2">Alineamiento</option>
+                            <option value="3">Clasificaci&oacute;n</option>
+                            <option value="4">Divisi&oacute;n de Predios</option>
+                            <option value="5">Enajenaci&oacute;n de Bienes</option>
+                            </select>    
+                         </div>
+                         <div class="form-group"> <!-- State Button -->
+                            <label for="tramites_admin_urbana" class="control-label"></label>
+                            <select class="form-control" id="tramites_imagen_urbana" disabled>
+                                <option value="1">Aviso de Obra Menor.</option>
+                                <option value="2">Permiso de Construcci&oacute;n Menor de 40 M2.</option>
+                                <option value="3">Permiso de Construcci&oacute;n Mayor de 40 M2. </option>
+                                <option value="4">Permiso de Construcci&oacute;n Especial</option>
+                                <option value="5">Aviso de Suspenci&oacute;n Temporal de Obra.</option>
+                                <option value="6">Certificacion de Terminaci&oacute;n De Obra.</option>
+                                <option value="7">Permiso Para Colocaci&oacute;n de Anuncio</option>
+                                <option value="8">Permiso Para Colocaci&oacute;n de Toldo.</option>
+                                <option value="9">Permiso Para Colocaci&oacute;n o Intalaci&oacute;n de Anuncios y/o Espectaculares.</option>
+                                <option value="10">Permiso Para Colocaci&oacute;n de Publicidad M&oacute;vil.</option>
+                                <option value="11">Nuevo ingreso o Refrendo como DRO..</option>
+                                </select>    
+                          <br>
+
+                    <div class="mb-3">
+                        <label for="fecha">Escoge tu fecha <span class="text-muted">(click en la fecha para ver el calendario)</span></label>
+                        <input type="date" class="form-control" id="fecha"/>
+                        <div class="invalid-feedback">
+                        
+                        </div>
+                      </div>
+                      <br>
+                     <!-- <div class="mb-3">
+                      <label>Hora:</label>
+                      <input type="time" name="hora" class="u-full-width" value="">
+                    </div>-->
+                    <br>
+
+                    <div class="form-group"> <!-- State Button -->
+                        <label for="horas_disponibles" class="control-label">Horas disponibles</label>
+                        <select class="form-control" id="horas_disponibles" disabled >
+                        </select>    
                     </div>
-                    
-                          
                     
                     <div class="form-group" align="center"> <!-- Submit Button -->
                         <button type="submit" class="btn btn-primary"><a href="fullcalendar.html" style="color: white;">Aceptar</a></button>
                     </div>     
-                    
+                </div>
                 </form>
-              </div>
-              <div class="col-md-3">
                 
               </div>
+            </div>
             </div>
           </div>
     <br>
@@ -231,7 +254,7 @@
                            
                             <div class="contact" style="color: black;" >
                                 <i class="far fa-envelope" style="font-size: 60px;" align="center"></i>
-                                <label  style="color: rgba(0, 0, 0, 0.603);" style="font-size: 40px;">Correo:<br>admon.urbana@guanajuatocapital<a style="color: rgba(0, 0, 0, 0.603);" ><br>.gob.mx</a></label>
+                                <label  style="color: rgba(0, 0, 0, 0.603);" style="font-size: 40px;">Correo:<br>admon.urbana@<br>guanajuatocapital<a style="color: rgba(0, 0, 0, 0.603);" >.gob.mx</a></label>
                             </div>
                             
                         </div>
@@ -240,7 +263,7 @@
     
             <div class="container-footer">
                 <div class="footer">
-                    <div class="copyright">
+                    <div class="copyright" align="center">
                         © 2020 Todos los derechos reservados Support-Time
                     </div>
                 </div>
@@ -319,8 +342,8 @@
             }
 
         </style>
-
-
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+        <script src="./js/vitat.js"></script>
     </body>
 
 
