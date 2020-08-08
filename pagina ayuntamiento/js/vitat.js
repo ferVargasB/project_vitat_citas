@@ -1,16 +1,42 @@
-const servidor = 'http://localhost/project_vitat_citas/back_citas/index.php/Cita/'
+/*** Aquí corren las funciones del script ***/
 
+//Direccion del servidor
+const servidor = 'http://localhost/project_vitat_citas/back_citas/index.php/Cita/';
+
+//Elementos del tipo de tramite y select de citas
 const direccion = document.getElementById('dirtra_id');
 const fecha_solicitada = document.getElementById('fecha');
+const formulario = document.getElementById('vitatForm');
 
+
+
+
+/***  Declaración de funciones  ***/
+
+//Evento para obtener las citas dispoibles del tramite
 fecha_solicitada.addEventListener('change', e => {
-    console.log(e.target.value);
-    get_citas_dia(servidor, e.target.value);
-    console.log('esperando al servidor...');
+
+
+    //Cada vez que cambia de direccion reinicia la fecha
+    /*     if (fecha_solicitada.value) {
+            fecha_solicitada.value = '';
+        } */
+
+    //Se valida que se haya escogido el tipo de tramite
+    if (!direccion.value || !direccion.value) {
+
+        Swal.fire({
+            title: 'Error!',
+            text: 'Debes seleccionar una dirección y un trámite',
+            icon: 'error'
+        });
+
+    } else {
+        get_citas_dia(servidor, e.target.value);
+    }
 });
 
 direccion.addEventListener('change', e => {
-    console.log(e.target.value);
 
     let tramites_imagen = document.getElementById('tramites_imagen_urbana');
     let tramites_admin = document.getElementById('tramites_admin_urbana');
@@ -28,6 +54,20 @@ direccion.addEventListener('change', e => {
         console.log('Debes seleccionar una opcion');
     }
 });
+
+
+/* Evento submit para realizar el registro */
+formulario.addEventListener('submit', e => {
+    e.preventDefault();
+    realizarRegistro();
+});
+
+
+function realizarRegistro() {
+    let formElement = formulario;
+    let data = new FormData(formElement);
+    sendData(data);
+}
 
 
 function showTramitesImagenUrbana(tramites_imagen, tramites_admin) {
@@ -68,7 +108,7 @@ function validar_citas(data) {
 }
 
 function validar_select_element(citas) {
-    
+
     let seleciona_hora_element = document.getElementById('horas_disponibles');
     let claves_horas = Object.keys(citas);
     let horas = Object.values(citas);
@@ -93,7 +133,7 @@ function update_citas(select_element) {
 function show_citas(seleciona_hora_element, claves_horas, horas) {
     for (let index = 0; index < claves_horas.length; index++) {
         let option = document.createElement('option');
-        option.value = claves_horas[index];
+        option.value = horas[index];
         option.innerText = horas[index];
 
         seleciona_hora_element.append(option);
@@ -105,7 +145,7 @@ async function get_citas_dia(servidor, fecha_solicitada) {
 
     try {
 
-        const response = await fetch(`${servidor}get_citas_dia/${fecha_solicitada}`,);
+        const response = await fetch(`${servidor}get_citas_dia/${fecha_solicitada}`);
         const responseJson = await response.json();
         validar_citas(responseJson);
 
@@ -113,6 +153,23 @@ async function get_citas_dia(servidor, fecha_solicitada) {
         Swal.fire({
             title: 'Error!',
             text: 'Ocurrió un error, vuelve a intentarlo',
+            icon: 'error'
+        });
+    }
+}
+
+async function sendData(dataForm) {
+    try {
+        const response = await fetch(`${servidor}realizar_registro/`, {
+            method: 'post',
+            body: dataForm
+        });
+        const responseJson = await response.json();
+        console.table(responseJson);
+    } catch (error) {
+        Swal.fire({
+            title: 'Error!',
+            text: 'Ocurrió un error al realizar el regsitro',
             icon: 'error'
         });
     }

@@ -10,6 +10,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     <title>VITAT | Bienvenido</title>
   </head>
     <body background="media/Captura.PNG" class="img-responsive">
@@ -81,10 +82,11 @@
                       </div>
                       
                       <div class="col-md-8">
+                        <form action="http://localhost/project_vitat_citas/back_citas/index.php/Cita/realizar_registro/" id="vitatForm" method="post">
                         <p><strong>¿Eres Perito?</strong></p>
 <p>
-	SI: <input type="radio" name="citizenship" />
-	NO: <input type="radio" name="citizenship" />
+	Si: <input type="radio" name="eres_perito" value="1" />
+	No: <input type="radio" name="eres_perito" value="0" />
 
 </p>
                         <div class="form-group"> <!-- Full Name -->
@@ -101,30 +103,30 @@
                   </div> 
                   <div class="form-group"> <!-- Street 2 -->
                     <label for="ncorreo_id" class="correo-label"><h6> Correo Electronico</h6></label>
-                    <input type="text" class="form-control" id="correo_id" name="Correo Electronico" placeholder="">
+                    <input type="mail" class="form-control" id="correo_id" name="Correo Electronico" placeholder="">
                 </div>  
                 
                 <div class="form-group"> <!-- State Button -->
                   <label for="dirtra_id" class="control-label"><h6>Direccion de Tramite</h6> </label>
-                  <select class="form-control" id="dirtra_id">
-                      <option value="0" >Selecciona una opción</option>
+                  <select class="form-control" name="direccion" id="dirtra_id">
+                      <option value="" >Selecciona una opción</option>
                       <option value="1" >Direccion de Imagen Urbana y Gestion de Centro Historico</option>
                       <option value="2" >Direccion de Administracion Urbana</option>       
                   </select>                    
               </div> 
               <div class="form-group"> <!-- State Button -->
                 <label for="tramites_imagen" class="control-label"> <h6> Tramite</h6></label>
-                <select class="form-control" id="tramites_admin_urbana" disabled >
-                    <option value="1">Uso de Suelo</option>
-                    <option value="2">Alineamiento</option>
-                    <option value="3">Clasificaci&oacute;n</option>
-                    <option value="4">Divisi&oacute;n de Predios</option>
-                    <option value="5">Enajenaci&oacute;n de Bienes</option>
+                <select class="form-control" name="tipo_tramite_admin_urbana" id="tramites_admin_urbana" disabled >
+                    <option value="12">Uso de Suelo</option>
+                    <option value="13">Alineamiento</option>
+                    <option value="14">Clasificaci&oacute;n</option>
+                    <option value="15">Divisi&oacute;n de Predios</option>
+                    <option value="16">Enajenaci&oacute;n de Bienes</option>
                     </select>    
                  </div>
                  <div class="form-group"> <!-- State Button -->
                   <label for="tramites_admin_urbana" class="control-label"></label>
-                  <select class="form-control" id="tramites_imagen_urbana" disabled>
+                  <select class="form-control" name="tipo_tramite_imagen" id="tramites_imagen_urbana" disabled>
                       <option value="1">Aviso de Obra Menor.</option>
                       <option value="2">Permiso de Construcci&oacute;n Menor de 40 M2.</option>
                       <option value="3">Permiso de Construcci&oacute;n Mayor de 40 M2. </option>
@@ -140,7 +142,7 @@
                 <br>
                 <div class="mb-3">
                   <label for="fecha"><h6> Escoge tu fecha </h6><span class="text-muted">(click en la fecha para ver el calendario)</span></label>
-                  <input type="date" class="form-control" id="fecha"/>
+                  <input type="date" class="form-control" name="fecha_solicitada" id="fecha"/>
                   <div class="invalid-feedback">
                   
                   </div>
@@ -154,11 +156,11 @@
 
                <div class="form-group"> <!-- State Button -->
                    <label for="horas_disponibles" class="control-label"><h6> Horas disponibles</h6></label>
-                   <select class="form-control" id="horas_disponibles">
+                   <select class="form-control" name="hora_solicitada" id="horas_disponibles">
                    </select>    
                </div>
                <div class="form-group" align="center"> <!-- Submit Button -->
-                <button type="submit" class="btn btn-primary"><a href="fullcalendar.html" style="color: white;">Aceptar</a></button>
+                <input type="submit" class="btn btn-primary" value="Realizar Registro"/>
             </div>     
         </div>
         </form>

@@ -69,6 +69,27 @@ class Cita extends CI_Controller {
 		die();
 	}
 
+	public function realizar_registro()
+	{
+		$fecha_cita = new DateTime( $this->input->post('fecha_solicitada') );
+		$hora_cita = $this->input->post('hora_solicitada');
+
+		//echo $fecha_cita->format('d-m-Y');
+		echo json_encode($this->input->post());
+
+/* 		try {
+			$data_post = array(
+				"nombre_solicitante" => $this->input->post('eres_perito'),
+				"nombre" => $this->input->post('nombre'),
+				"direccion" => $this->input->post('direccion'),
+				"numero_telefonico" => $this->input->post('numero_telefonico'),
+				"fecha_cita" => $this->input->post('fecha_solicitada'), 
+			)
+		} catch (\Throwable $th) {
+			//throw $th;
+		} */
+	}
+
 	private function get_citas_disponibles($citas_reservadas)
 	{
 		$citas_ocupadas = null;
@@ -78,4 +99,6 @@ class Cita extends CI_Controller {
 
 		return array_diff_key($this->citas_habiles, $citas_ocupadas);
 	}
+
+
 }
