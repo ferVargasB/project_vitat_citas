@@ -12,4 +12,8 @@ class Cita_model extends CI_Model {
 		return $query->result();
 	}
 
+	public function insert_cita($cita_data)
+	{	
+		$this->db->insert('citas', $cita_data);
+	}
 }

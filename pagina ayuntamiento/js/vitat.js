@@ -165,11 +165,16 @@ async function sendData(dataForm) {
             body: dataForm
         });
         const responseJson = await response.json();
-        console.table(responseJson);
+        Swal.fire({
+            title: 'Éxito',
+            text: 'Se ha creado su cita',
+            icon: 'success'
+        });
+        formulario.reset(); 
     } catch (error) {
         Swal.fire({
             title: 'Error!',
-            text: 'Ocurrió un error al realizar el regsitro',
+            text: 'Ocurrió un error al realizar el registro',
             icon: 'error'
         });
     }

@@ -71,23 +71,27 @@ class Cita extends CI_Controller {
 
 	public function realizar_registro()
 	{
-		$fecha_cita = new DateTime( $this->input->post('fecha_solicitada') );
-		$hora_cita = $this->input->post('hora_solicitada');
+		$cita_data = array(
+			'nombre_solicitante' => $this->input->post('Nombre'),
+			'apellidos_solicitante' => $this->input->post('apellidos'),
+			'fecha_creacion' => date('Y-m-d H-i-s'),
+			'fecha_cita' => $this->input->post('fecha_solicitada'),
+			'hora_cita' => $this->input->post('hora_solicitada'),
+			'clave_hora' => 'x',
+			'id_tramite_solicitado' => intval($this->input->post('tipo_tramite')),
+			'estatus' => 0
+		);
 
-		//echo $fecha_cita->format('d-m-Y');
-		echo json_encode($this->input->post());
-
-/* 		try {
-			$data_post = array(
-				"nombre_solicitante" => $this->input->post('eres_perito'),
-				"nombre" => $this->input->post('nombre'),
-				"direccion" => $this->input->post('direccion'),
-				"numero_telefonico" => $this->input->post('numero_telefonico'),
-				"fecha_cita" => $this->input->post('fecha_solicitada'), 
-			)
-		} catch (\Throwable $th) {
-			//throw $th;
-		} */
+		try {
+			$this->Cita_model->insert_cita($cita_data);
+			$response = array(
+				'codigo' => '0',
+				'mensaje' => 'Su cita ha sido creada con éxito'
+			);
+			echo json_encode($response);
+		} catch (Error $e) {
+			
+		}
 	}
 
 	private function get_citas_disponibles($citas_reservadas)
