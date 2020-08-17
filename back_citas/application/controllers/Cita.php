@@ -37,14 +37,14 @@ class Cita extends CI_Controller {
 		$this->load->view('welcome_message');
 	}
 
-	public function get_citas_dia($fecha_solicitada)
+	public function get_citas_dia($fecha_solicitada, $id_tramite)
 	{
 		$respuesta = array(
 			'estatus' => 'error',
 			'data' => '0'
 		);
 
-		$citas_reservadas = $this->Cita_model->get_citas_dia($fecha_solicitada);
+		$citas_reservadas = $this->Cita_model->get_citas_dia($fecha_solicitada, $id_tramite);
 
 		//Si no hay ninguna cita reservada en el dia
 		if ( count($citas_reservadas) == 0 ){
@@ -71,23 +71,25 @@ class Cita extends CI_Controller {
 
 	public function realizar_registro()
 	{
-		$cita_data = array(
-			'nombre_solicitante' => $this->input->post('Nombre'),
-			'apellidos_solicitante' => $this->input->post('apellidos'),
-			'fecha_creacion' => date('Y-m-d H-i-s'),
-			'fecha_cita' => $this->input->post('fecha_solicitada'),
-			'hora_cita' => $this->input->post('hora_solicitada'),
-			'clave_hora' => 'x',
-			'id_tramite_solicitado' => intval($this->input->post('tipo_tramite')),
-			'estatus' => 0
-		);
 
 		try {
+			$cita_data = array(
+				'nombre_solicitante' => $this->input->post('Nombre'),
+				'apellidos_solicitante' => $this->input->post('apellidos'),
+				'fecha_creacion' => date('Y-m-d H-i-s'),
+				'fecha_cita' => $this->input->post('fecha_solicitada'),
+				'hora_cita' => $this->input->post('hora_solicitada'),
+				'clave_hora' => str_replace(':','',$this->input->post('hora_solicitada')),
+				'id_tramite_solicitado' => intval($this->input->post('tipo_tramite')),
+				'estatus' => 0
+			);
+
 			$this->Cita_model->insert_cita($cita_data);
 			$response = array(
 				'codigo' => '0',
 				'mensaje' => 'Su cita ha sido creada con éxito'
 			);
+
 			echo json_encode($response);
 		} catch (Error $e) {
 			

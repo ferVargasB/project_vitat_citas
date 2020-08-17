@@ -3,11 +3,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Cita_model extends CI_Model {
 
-	public function get_citas_dia($fecha_solicitada)
+	public function get_citas_dia($fecha_solicitada, $id_tramite)
 	{
 		$this->db->select('*');
 		$this->db->from('citas');
 		$this->db->where('fecha_cita', $fecha_solicitada);
+		$this->db->where('id_tramite_solicitado', intval($id_tramite));
 		$query = $this->db->get();
 		return $query->result();
 	}

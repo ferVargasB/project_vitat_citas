@@ -9,8 +9,6 @@ const fecha_solicitada = document.getElementById('fecha');
 const formulario = document.getElementById('vitatForm');
 
 
-
-
 /***  Declaración de funciones  ***/
 
 //Evento para obtener las citas dispoibles del tramite
@@ -32,7 +30,15 @@ fecha_solicitada.addEventListener('change', e => {
         });
 
     } else {
-        get_citas_dia(servidor, e.target.value);
+        let direccion = document.getElementById('dirtra_id');
+        let id_tramite = null;
+        if (direccion.value == 1){
+            id_tramite = document.getElementById('tramites_imagen_urbana').value;
+        } else if (dirtra_id.value == 2) {
+            id_tramite = document.getElementById('tramites_admin_urbana').value;            
+        }
+
+        get_citas_dia(servidor, e.target.value, id_tramite);
     }
 });
 
@@ -141,11 +147,10 @@ function show_citas(seleciona_hora_element, claves_horas, horas) {
 }
 
 
-async function get_citas_dia(servidor, fecha_solicitada) {
+async function get_citas_dia(servidor, fecha_solicitada, id_tramite) {
 
     try {
-
-        const response = await fetch(`${servidor}get_citas_dia/${fecha_solicitada}`);
+        const response = await fetch(`${servidor}get_citas_dia/${fecha_solicitada}/${id_tramite}`);
         const responseJson = await response.json();
         validar_citas(responseJson);
 
