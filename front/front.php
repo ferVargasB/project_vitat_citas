@@ -43,15 +43,49 @@
             </style>
             
         </header>
+          
+            <nav nav class="navbar navbar-expand-md bg-dark navbar-dark">
+                    <!-- Brand -->
+                    <a class="navbar-brand" href="">VITAT</a>
+                  
+                    <!-- Toggler/collapsibe Button -->
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                  
+                    <!-- Navbar links -->
+                    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                      <ul class="navbar-nav">
+                        <li class="nav-item">
+                          <a class="nav-link" href="DGMAOT.html">SOBRE LA DGMAOT</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">DIR.ADMINISTRACI&Oacute;N URBANA</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="imagenurbana.html">DIR.IMAGEN URBANA</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Tramites.html">TRAMITES DE LA ADMINISTRACI&Oacute;N</a>
+                          </li>
+                          <li>
+                          <button type="submit" class="btn btn-danger" style="position: absolute; right: 10px;">
+	        <span class="glyphicon glyphicon-log-out" ></span> Cerrar Sesión
+	    </button>
+                  </li>
+                      </ul>
+                    </div>
+            </nav>
             <br>
-            
         <div class="container"  style="background-color: white;">
   <div class="row" >
     
     <div class="col-md-12">
     <table class="table">
   <thead class="thead-dark">
+
     <tr>
+      
     <th  style="font-size:70%;" scope="col" >#</th>
     <th style="font-size:70%;" scope="col">Perito</th>
       <th style="font-size:70%;" scope="col">Nombre</th>
@@ -64,7 +98,9 @@
        <th style="font-size:70%;" scope="col">Asigno Cita</th>
       <th style="font-size:70%;" scope="col">Hora</th>
     </tr>
+    
   </thead>
+ 
   <tbody>
     <tr>
       <th style="font-size:80%;" scope="row">1</th>
