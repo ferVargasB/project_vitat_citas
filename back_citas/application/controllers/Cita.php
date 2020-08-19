@@ -88,6 +88,7 @@ class Cita extends CI_Controller {
 			$response = array(
 				'codigo' => '0',
 				'mensaje' => 'Su cita ha sido creada con éxito'
+				
 			);
 
 			echo json_encode($response);
