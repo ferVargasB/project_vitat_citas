@@ -201,6 +201,19 @@
       <td style="font-size:80%;">10:00</td>
     </tr>
   </tbody>
+<style>
+  @media screen and (max-width: 320px) {
+     table {
+       display: block;
+       overflow-x: auto;
+     }
+}
+</style>
+<style>
+   tr: hover {
+          color de fondo: # ffff99;
+        }
+</style>
 </table>
     </div>
     
