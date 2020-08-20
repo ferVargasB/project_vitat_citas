@@ -214,6 +214,12 @@
           color de fondo: # ffff99;
         }
 </style>
+<style>
+table tr:hover {
+  background-color: #C4D9E1 ;
+  cursor: pointer;
+}
+</style>
 </table>
     </div>
     
@@ -293,6 +299,58 @@
       }
 
   </style>
+
+  </div>
+  <br>
+  <footer style="opacity: 0.8;">
+      <div class="containerFooter-all">
+          <div class="row" >
+              <div class="col-md-3" align="center">
+                  <div class="column1" >
+                      <h1 style="color: black;">T&eacute;lefono</h1>
+                      
+                      <div class="contact" style="color: black;">
+                          <i class="fas fa-mobile-alt" style="font-size: 83px;"align="center" ></i>
+                          <label style="color: rgba(0, 0, 0, 0.603);">T&eacute;lefono <br>73-4-01-28 <br> ext. 110, 221 y/o 106</label>
+                      </div>
+                  </div>                   
+              </div>
+  <div class="col-md-4" align="center">
+                  <div class="column1">
+                      <h2 style="color: black;">Direcci&oacute;n:</h2>
+                        <div class="contact" style="color: black;">
+                          <i class="far fa-building" style="font-size: 70px;"align="center" ></i>
+                          <label style="color: rgba(0, 0, 0, 0.603);">Boulevard Guanajuato#8-A Guanajuato Gto, C.P.36000 </label>
+                      </div>
+              </div>
+                  
+              </div>
+
+              <div class="col-md-5" align="center">
+                  <div class="column1">
+                      <h1 style="color: black;">Correo Electr&oacute;nico</h1>
+                     
+                      <div class="contact" style="color: black;" >
+                          <i class="far fa-envelope" style="font-size: 70px;" align="center"></i>
+                          <label  style="color: rgba(0, 0, 0, 0.603);" style="font-size: 40px;">Correo:<br>admon.urbana@<br>guanajuatocapital<a style="color: rgba(0, 0, 0, 0.603);" >.gob.mx</a></label>
+                      </div>
+                      
+                  </div>
+          </div>
+      </div>
+
+      <div class="container-footer">
+          <div class="footer">
+              <div class="copyright" align="center">
+                   © 2020 Todos los derechos reservados Support-Time
+              </div>
+              
+          </div>
+          
+      </div>
+      </div>
+      
+  </footer>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
   <script src="./js/vitat.js"></script>
  
