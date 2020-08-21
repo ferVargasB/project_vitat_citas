@@ -201,6 +201,47 @@
       <td style="font-size:80%;">10:00</td>
     </tr>
   </tbody>
+  <tbody>
+    <tr>
+    <th style="font-size:80%;" scope="row">1</th>
+    <td  style="font-size:80%;">NO</td>
+      <td style="font-size:80%;">Pedro</td>
+      <td style="font-size:80%;">Antonio Salas</td>
+      <td style="font-size:80%;">San jose</td>
+      <td style="font-size:80%;">4622715255</td>
+      <td style="font-size:80%;">salastony164@gmail.com</td>
+      <td style="font-size:80%;">Uso de suelo</td>
+      <td style="font-size:80%;">19/08/2020</td>
+      <td style="font-size:80%;">20/08/2020</td>
+      <td style="font-size:80%;">09:00</td>
+    </tr>
+    <tr>
+      <th  style="font-size:80%;" scope="row">2</th>
+      <td  style="font-size:80%;">SI</td>
+      <td style="font-size:80%;">Pedro</td>
+      <td style="font-size:80%;">Antonio Salas</td>
+      <td style="font-size:80%;">San jose</td>
+      <td style="font-size:80%;">4622715255</td>
+      <td style="font-size:80%;">salastony164@gmail.com</td>
+      <td style="font-size:80%;">Uso de suelo</td>
+      <td style="font-size:80%;">19/08/2020</td>
+      <td style="font-size:80%;">20/08/2020</td>
+      <td style="font-size:80%;">09:30</td>
+    </tr>
+    <tr>
+      <th  style="font-size:80%;"scope="row">3</th>
+      <td  style="font-size:80%;">NO</td>
+      <td style="font-size:80%;">Pedro</td>
+      <td style="font-size:80%;">Antonio Salas</td>
+      <td style="font-size:80%;">San jose</td>
+      <td style="font-size:80%;">4622715255</td>
+      <td style="font-size:80%;">salastony164@gmail.com</td>
+      <td style="font-size:80%;">Uso de suelo</td>
+      <td style="font-size:80%;">19/08/2020</td>
+      <td style="font-size:80%;">20/08/2020</td>
+      <td style="font-size:80%;">10:00</td>
+    </tr>
+  </tbody>
 <style>
   @media screen and (max-width: 320px) {
      table {
