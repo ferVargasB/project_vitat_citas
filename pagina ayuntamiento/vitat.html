@@ -85,35 +85,35 @@
                         <form action="http://localhost/project_vitat_citas/back_citas/index.php/Cita/realizar_registro/" id="vitatForm" method="post">
                         <p><strong>¿Eres Perito?</strong></p>
 <p>
-	Si: <input type="radio" name="eres_perito" value="1" />
-	No: <input type="radio" name="eres_perito" value="0" />
+	Si: <input type="radio" name="eres_perito" value="1" required/>
+	No: <input type="radio" name="eres_perito" value="0"required />
 
 </p>
                         <div class="form-group"> <!-- Full Name -->
                           <label for="Nombre_id" class="control-label"><h6> Nombre:</h6></label>
-                          <input type="text" class="form-control" id="Nombre_id" name="Nombre" placeholder="">
+                          <input type="text" class="form-control" id="Nombre_id" name="Nombre" placeholder="" required>
                       </div>
                       <div class="form-group">
                         <label for="Nombre_id" class="control-label"><h6> Apellidos:</h6></label>
-                        <input type="text" class="form-control" id="apellidos" name="apellidos" placeholder="">
+                        <input type="text" class="form-control" id="apellidos" name="apellidos" placeholder="" required>
                       </div>  
                       <div class="form-group"> <!-- Street 1 -->
                         <label for="Direccion_id" class="control-label"><h6> Direccion:</h6></label>
-                        <input type="text" class="form-control" id="Direccion_id" name="Direccion" placeholder="">
+                        <input type="text" class="form-control" id="Direccion_id" name="Direccion" placeholder="" required>
                     </div>  
                     <div class="form-group"> <!-- Street 2 -->
                       <label for="numero_id" class="control-label"><h6> Numero Telefonico</h6></label>
-                      <input type="text" class="form-control" id="numero_id" name="Numero Telefonico" placeholder="">
+                      <input type="text" class="form-control" id="numero_id" name="Numero Telefonico" placeholder="" required>
                   </div> 
-                  <div class="form-group"> <!-- Street 2 -->
-                    <label for="ncorreo_id" class="correo-label"><h6> Correo Electronico</h6></label>
-                    <input type="mail" class="form-control" id="correo_id" name="Correo Electronico" placeholder="">
+                  <div class="form-group" > <!-- Street 2 -->
+                    <label for="ncorreo_id" class="correo-label" action="16-html5-email-input.php" method="POST"><h6> Correo Electronico</h6></label>
+                    <input type="email" class="form-control" id="correo_id" name="Correo Electronico" placeholder="" required>
                 </div>  
                 
                 <div class="form-group"> <!-- State Button -->
-                  <label for="dirtra_id" class="control-label"><h6>Direccion de Tramite</h6> </label>
+                  <label for="dirtra_id" class="control-label" ><h6>Direccion de Tramite</h6> </label>
                   <select class="form-control" name="direccion" id="dirtra_id">
-                      <option value="" >Selecciona una opción</option>
+                      <option value=""  >Selecciona una opción</option>
                       <option value="1" >Direccion de Imagen Urbana y Gestion de Centro Historico</option>
                       <option value="2" >Direccion de Administracion Urbana</option>       
                   </select>                    
@@ -130,7 +130,7 @@
                  </div>
                  <div class="form-group"> <!-- State Button -->
                   <label for="tramites_admin_urbana" class="control-label"></label>
-                  <select class="form-control" name="tipo_tramite" id="tramites_imagen_urbana" disabled>
+                  <select class="form-control" name="tipo_tramite" id="tramites_imagen_urbana"  disabled>
                       <option value="1">Aviso de Obra Menor.</option>
                       <option value="2">Permiso de Construcci&oacute;n Menor de 40 M2.</option>
                       <option value="3">Permiso de Construcci&oacute;n Mayor de 40 M2. </option>
@@ -144,7 +144,7 @@
                       <option value="11">Nuevo ingreso o Refrendo como DRO..</option>
                       </select>    
                 <br>
-                <div class="mb-3">
+                <div class="mb-3" id="fecha_form">
                   <label for="fecha"><h6> Escoge tu fecha </h6><span class="text-muted">(click en la fecha para ver el calendario)</span></label>
                   <input type="date" class="form-control" name="fecha_solicitada" id="fecha"/>
                   <div class="invalid-feedback">
