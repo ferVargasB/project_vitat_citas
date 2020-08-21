@@ -78,10 +78,10 @@
             </nav>
             <br>
         <div class="container"  style="background-color: white;">
+        <div class="table-responsive">
   <div class="row" >
-    
     <div class="col-md-12">
-    <table class="table">
+    <table class="table table-hover">
   <thead class="thead-dark">
 
     <tr>
@@ -143,8 +143,7 @@
     </tr>
   </tbody>
 </table>
-
-<table class="table">
+<table class="table table-hover ">
   <thead class="thead-light">
     <tr>
     <th  style="font-size:70%;" scope="col" >#</th>
@@ -208,21 +207,13 @@
        overflow-x: auto;
      }
 }
-</style>
-<style>
-   tr: hover {
-          color de fondo: # ffff99;
-        }
-</style>
-<style>
-table tr:hover {
-  background-color: #C4D9E1 ;
-  cursor: pointer;
-}
+
+
 </style>
 </table>
+</div>
     </div>
-    
+
   </div>
 
 <br>          
