@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <title>VITAT | Bienvenido</title>
   </head>
     <body background="media/fondo.jpg" class="img-responsive">
@@ -43,7 +43,7 @@
             </style>
             
         </header>
-          
+        
             <nav nav class="navbar navbar-expand-md bg-dark navbar-dark">
                     <!-- Brand -->
                     <a class="navbar-brand" href="">VITAT</a>
@@ -69,13 +69,14 @@
                             <a class="nav-link" href="Tramites.html">TRAMITES DE LA ADMINISTRACI&Oacute;N</a>
                           </li>
                           <li>
-                          <button type="submit" class="btn btn-danger" style="position: absolute; right: 10px;">
+                          <button type="submit" class="btn btn-danger" style="position: relative; left: 215px;">
 	        <span class="glyphicon glyphicon-log-out" ></span> Cerrar Sesión
 	    </button>
                   </li>
                       </ul>
                     </div>
             </nav>
+              
             <br>
         <div class="container"  style="background-color: white;">
         <div class="table-responsive table-hover">
