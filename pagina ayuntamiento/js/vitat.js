@@ -173,7 +173,11 @@ async function sendData(dataForm) {
         Swal.fire({
             title: 'Éxito',
             text: 'Se ha creado su cita',
-            icon: 'success'
+            icon: 'success',
+            confirmButtonText: '<a href="index.html">Aceptar</a> ',
+            confirmButtonColor: '	#FFFFFF',
+          
+        
         });
         formulario.reset(); 
     } catch (error) {
