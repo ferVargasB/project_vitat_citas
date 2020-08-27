@@ -17,4 +17,14 @@ class Cita_model extends CI_Model {
 	{	
 		$this->db->insert('citas', $cita_data);
 	}
+	public function get_citas_by_administrador()
+	{
+		$this->db->select('*');
+		$this->db->from('citas'); 
+		$this->db-> order_by ( 'id_cita' ,  'DESC' );
+		$this->db->limit(100); 
+		$query = $this->db->get();
+	    return $query->result();
+
+	}
 }

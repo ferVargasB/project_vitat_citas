@@ -106,6 +106,10 @@ class Cita extends CI_Controller {
 
 		return array_diff_key($this->citas_habiles, $citas_ocupadas);
 	}
-
+	public function admin()
+	{
+		$citas_reservadas = $this->Cita_model->get_citas_by_administrador();
+		echo json_encode($citas_reservadas);
+	}
 
 }
