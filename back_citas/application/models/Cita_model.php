@@ -27,4 +27,13 @@ class Cita_model extends CI_Model {
 	    return $query->result();
 
 	}
+
+	public function get_cita_by_id()
+	{
+		$this->db->select('id_cita');
+		$this->db->from('citas');
+		$this->db-> order_by ( 'id_cita' ,  'DESC' );
+		$query = $this->db->get();
+	    return $query->result();
+	}
 }
