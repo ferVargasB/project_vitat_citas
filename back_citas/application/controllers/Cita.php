@@ -112,9 +112,9 @@ class Cita extends CI_Controller {
 		echo json_encode($citas_reservadas);
 	}
 
-	public function get_cita_by_id($id_cita)
+	public function get_cita_by_id()
 	{
-		$citas_reservadas = $this->Cita_model->get_cita_by_id($id_cita);
+		$citas_reservadas = $this->Cita_model->get_cita_by_id();
 		echo json_encode($citas_reservadas);
 	}
 

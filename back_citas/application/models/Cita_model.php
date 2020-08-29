@@ -25,13 +25,14 @@ class Cita_model extends CI_Model {
 		$this->db->limit(100); 
 		$query = $this->db->get();
 	    return $query->result();
+
 	}
 
-	public function get_cita_by_id($id_cita)
+	public function get_cita_by_id()
 	{
-		$this->db->select('id_cita'); //necesito que me traigas todo la info de la cita y en lugar del tramite_id su nombre
-		$this->db->from('citas'); 
-		$this->db-> order_by ( 'id_cita' ,  'DESC' ); //borralo
+		$this->db->select('id_cita');
+		$this->db->from('citas');
+		$this->db-> order_by ( 'id_cita' ,  'DESC' );
 		$query = $this->db->get();
 	    return $query->result();
 	}
