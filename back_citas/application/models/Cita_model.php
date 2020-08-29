@@ -28,7 +28,7 @@ class Cita_model extends CI_Model {
 
 	}
 
-	public function get_cita_by_id()
+	public function get_cita_by_id($id)
 	{
 		$this->db->select('id_cita');
 		$this->db->from('citas');
