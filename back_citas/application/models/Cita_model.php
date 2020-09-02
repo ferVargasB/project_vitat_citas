@@ -28,12 +28,20 @@ class Cita_model extends CI_Model {
 
 	}
 
-	public function get_cita_by_id($id)
+	public function get_cita_by_id($id_cita)
 	{
-		$this->db->select('id_cita');
+		$this->db->select('id_cita,nombre_solicitante,apellidos_solicitante,fecha_creacion,fecha_cita,hora_cita,nombre');
 		$this->db->from('citas');
-		$this->db-> order_by ( 'id_cita' ,  'DESC' );
+		$this->db->join('tramites', 'tramites.id_tramite = citas.id_tramite_solicitado' );
 		$query = $this->db->get();
-	    return $query->result();
+		return $query->result();
+		
+
+		//$query  = $this->db->select('nombre')
+          //         ->from('tramites')
+				   
+				   
+       //            ->get();
+//return $query->result();
 	}
 }
