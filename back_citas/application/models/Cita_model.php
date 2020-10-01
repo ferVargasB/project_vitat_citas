@@ -35,13 +35,5 @@ class Cita_model extends CI_Model {
 		$this->db->join('tramites', 'tramites.id_tramite = citas.id_tramite_solicitado' );
 		$query = $this->db->get();
 		return $query->result();
-		
-
-		//$query  = $this->db->select('nombre')
-          //         ->from('tramites')
-				   
-				   
-       //            ->get();
-//return $query->result();
 	}
 }

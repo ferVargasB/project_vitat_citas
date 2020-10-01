@@ -6,6 +6,12 @@ class Funcionario extends CI_Controller {
 
     public function index()
     {
-        $this->load->view('funcionario/dashboard');
+        if ( !$this->session->logged_in ){
+            header("Location: http://localhost/project_vitat_citas/back_citas/"); 
+            exit();
+        }
+
+        $data['citas'] = $this->Cita_model->get_citas_by_administrador();
+        $this->load->view('Funcionario/dashboard', $data);
     }
 }

@@ -20,7 +20,7 @@
                 <div class="col-md-2 " align="center">
                     <!-- style="border: 2px solid rgb(55, 0, 255)";----->
                     
-                    <img class="img-responsive" src="media/logo.png" width="111" height="130 "   > 
+                    <img class="img-responsive" src="<?php echo base_url().'assets/img/logo.png';?>" width="111" height="130 "   > 
                 </div>
                     <div class="col-md-8" align="center">
                         
@@ -30,7 +30,7 @@
                     </div>
                  
                 <div class="col-md-2" align="center" >
-                        <img class="img-responsive" src="media/VITATlogoazul.png" width="180" height="130 "  > 
+                        <img class="img-responsive" src="<?php echo base_url().'assets/img/VITATlogoazul.png';?>" width="180" height="130 "  > 
                 </div>
             </div>  
             <style>
@@ -69,10 +69,8 @@
                             <a class="nav-link" href="Tramites.html">TRAMITES DE LA ADMINISTRACI&Oacute;N</a>
                           </li>
                           <li>
-                          <button type="submit" class="btn btn-danger" style="position: absolute; right: 10px;">
-	        <span class="glyphicon glyphicon-log-out" ></span> Cerrar Sesión
-	    </button>
-                  </li>
+                            <a href="http://localhost/project_vitat_citas/back_citas/?log_out=True" class="btn btn-danger">Cerrar Sesión</a>
+                          </li>
                       </ul>
                     </div>
             </nav>
@@ -81,27 +79,34 @@
         <div class="table-responsive table-hover">
   <div class="row" >
      <div class="col-md-12">
-    <table class="table">
-  <thead class="thead-dark">
+<table class="table" style="text-align:center;">
 
-    <tr>
-      
-    <th  style="font-size:70%;" scope="col" >#</th>
-    <th style="font-size:70%;" scope="col">Perito</th>
-      <th style="font-size:70%;" scope="col">Nombre</th>
-      <th style="font-size:70%;" scope="col">Apellidos</th>
-      <th style="font-size:70%;" scope="col">Direcci&oacute;n</th>
-      <th  style="font-size:70%;" scope="col">Telefono</th>
-      <th style="font-size:70%;" scope="col" >Correo Electronico</th>
-      <th style="font-size:70%;" scope="col">Tramite</th>
-      <th style="font-size:70%;" scope="col">Ingreso Cita</th>
-       <th style="font-size:70%;" scope="col">Asigno Cita</th>
-      <th style="font-size:70%;" scope="col">Hora</th>
+  <thead class="thead-dark">
+    <tr> 
+      <th style="font-size:70%;" scope="col" >Número de cita</th>
+      <th style="font-size:70%;" scope="col">Nombre del solicitante</th>
+      <th style="font-size:70%;" scope="col">Fecha de la cita</th>
+      <th style="font-size:70%;" scope="col">Hora de la cita</th>
+      <th style="font-size:70%;" scope="col">Trámite solicitado</th>
+      <th style="font-size:70%;" scope="col">Estatus</th>
     </tr>
-    
   </thead>
  
   <tbody>
+    <?php foreach( $citas as $cita){ ?>
+      <tr>
+        <th style="font-size:80%;" scope="row"><?php echo $cita->id_cita;?></th>
+        <td  style="font-size:80%;"><?php echo $cita->nombre_solicitante;?></td>
+        <td  style="font-size:80%;"><?php echo $cita->fecha_cita;?></td>
+        <td style="font-size:80%;"><?php echo $cita->hora_cita;?></td>
+        <td style="font-size:80%;"><?php echo $cita->id_tramite_solicitado;?></td>
+        <td style="font-size:80%;"><?php echo $cita->estatus;?></td>
+        </tr style="font-size:80%;">
+      <tr>
+
+    <?php    
+      } 
+    ?>
     <tr>
       <th style="font-size:80%;" scope="row">1</th>
       <td  style="font-size:80%;">SI</td>
@@ -109,108 +114,9 @@
       <td style="font-size:80%;">Antonio Salas</td>
       <td style="font-size:80%;">San jose</td>
       <td style="font-size:80%;">4622715255</td>
-      <td style="font-size:80%;">salastony164@gmail.com</td>
-      <td style="font-size:80%;">Uso de suelo</td>
-      <td style="font-size:80%;">19/08/2020</td>
-      <td style="font-size:80%;">20/08/2020</td>
-      <td style="font-size:80%;">09:00</td>
-    </tr style="font-size:80%;">
+      </tr style="font-size:80%;">
     <tr>
-    <th style="font-size:80%;" scope="row">2</th>
-    <td  style="font-size:80%;">SI</td>
-      <td style="font-size:80%;">Jose</td>
-      <td style="font-size:80%;">Silva Orozco</td>
-      <td style="font-size:80%;">Salamanca</td>
-      <td style="font-size:80%;">4722345678</td>
-      <td style="font-size:80%;">isaacsilva@gmail.com</td>
-      <td style="font-size:80%;">Aviso de Obra Menor</td>
-      <td style="font-size:80%;">19/08/2020</td>
-      <td style="font-size:80%;">20/08/2020</td>
-      <td style="font-size:80%;">10:00</td>
-    </tr>
-    <tr>
-      <th style="font-size:80%;" scope="row">3</th>
-      <td  style="font-size:80%;">NO</td>
-      <td style="font-size:80%;">Fernando</td>
-      <td style="font-size:80%;">Vargas Bravo</td>
-      <td style="font-size:80%;">Irapuato</td>
-      <td style="font-size:80%;">4731241652</td>
-      <td style="font-size:80%;">fernandovargas@gmail.com</td>
-      <td style="font-size:80%;">Aviso de Obra Menor</td>
-      <td style="font-size:80%;">19/08/2020</td>
-      <td style="font-size:80%;">20/08/2020</td>
-      <td style="font-size:80%;">10:30</td>
-    </tr>
   </tbody>
-</table>
-
-<table class="table">
-  <thead class="thead-light">
-    <tr>
-    <th  style="font-size:70%;" scope="col" >#</th>
-    <th style="font-size:70%;" scope="col">Perito</th>
-      <th style="font-size:70%;" scope="col">Nombre</th>
-      <th style="font-size:70%;" scope="col">Apellidos</th>
-      <th style="font-size:70%;" scope="col">Direcci&oacute;n</th>
-      <th  style="font-size:70%;" scope="col">Telefono</th>
-      <th style="font-size:70%;" scope="col" >Correo Electronico</th>
-      <th style="font-size:70%;" scope="col">Tramite</th>
-      <th style="font-size:70%;" scope="col">Ingreso Cita</th>
-       <th style="font-size:70%;" scope="col">Asigno Cita</th>
-      <th style="font-size:70%;" scope="col">Hora</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-    <th style="font-size:80%;" scope="row">1</th>
-    <td  style="font-size:80%;">NO</td>
-      <td style="font-size:80%;">Pedro</td>
-      <td style="font-size:80%;">Antonio Salas</td>
-      <td style="font-size:80%;">San jose</td>
-      <td style="font-size:80%;">4622715255</td>
-      <td style="font-size:80%;">salastony164@gmail.com</td>
-      <td style="font-size:80%;">Uso de suelo</td>
-      <td style="font-size:80%;">19/08/2020</td>
-      <td style="font-size:80%;">20/08/2020</td>
-      <td style="font-size:80%;">09:00</td>
-    </tr>
-    <tr>
-      <th  style="font-size:80%;" scope="row">2</th>
-      <td  style="font-size:80%;">SI</td>
-      <td style="font-size:80%;">Pedro</td>
-      <td style="font-size:80%;">Antonio Salas</td>
-      <td style="font-size:80%;">San jose</td>
-      <td style="font-size:80%;">4622715255</td>
-      <td style="font-size:80%;">salastony164@gmail.com</td>
-      <td style="font-size:80%;">Uso de suelo</td>
-      <td style="font-size:80%;">19/08/2020</td>
-      <td style="font-size:80%;">20/08/2020</td>
-      <td style="font-size:80%;">09:30</td>
-    </tr>
-    <tr>
-      <th  style="font-size:80%;"scope="row">3</th>
-      <td  style="font-size:80%;">NO</td>
-      <td style="font-size:80%;">Pedro</td>
-      <td style="font-size:80%;">Antonio Salas</td>
-      <td style="font-size:80%;">San jose</td>
-      <td style="font-size:80%;">4622715255</td>
-      <td style="font-size:80%;">salastony164@gmail.com</td>
-      <td style="font-size:80%;">Uso de suelo</td>
-      <td style="font-size:80%;">19/08/2020</td>
-      <td style="font-size:80%;">20/08/2020</td>
-      <td style="font-size:80%;">10:00</td>
-    </tr>
-  </tbody>
-  
-<style>
-  @media screen and (max-width: 320px) {
-     table {
-       display: block;
-       overflow-x: auto;
-     }
-}
-</style>
-
 </table>
 </div>
     </div>

@@ -5,7 +5,7 @@ function show_response(response){
     if ( response.status === 'error'){
         alert(mensaje);
     } else {
-        console.log(response.mensaje);
+        window.location.replace("http://localhost/project_vitat_citas/back_citas/index.php/Funcionario");
     }
 }
 

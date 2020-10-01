@@ -20,6 +20,10 @@ class Login extends CI_Controller {
 	 */
 	public function index()
 	{
+
+        if ( $this->session->userdata('logged_in') ){
+            $this->session->sess_destroy();
+        }
 		$this->load->view('Login/login_form');
     }
     
@@ -51,6 +55,14 @@ class Login extends CI_Controller {
         if ( $password != $user[0]->password ){
             throw new Exception('error');
         }
+
+        //Iniciar sesión
+        $dataUser = array(
+            'email'     => $user[0]->mail,
+            'logged_in' => True
+        );
+
+        $this->session->set_userdata($dataUser);
 
         $respuesta['status'] = 'ok';
         $respuesta['mensaje'] = 'Login correcto';
