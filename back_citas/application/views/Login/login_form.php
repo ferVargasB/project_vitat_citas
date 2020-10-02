@@ -34,11 +34,44 @@
 							</div>
 							<input type="password" name="user_password" class="form-control input_pass" placeholder="Escribe tu password" required="">
 						</div>
-						
+						<style>
+							.button
+							{
+								background-color: #0B73EF;
+								border:none;
+								color:white;
+								padding: 15px 32px;
+								text-align: center;
+								text-decoration: none;
+								display: inline-block;
+								font-size: 16px;
+								margin: 4px 2px;
+								cursor: pointer;
+							}
+							
+								.button:disabled
+								{
+									opacity:0.5;
+								}
+							.hide {
+								display: none;
+							}
+							</style>
 							<div class="d-flex justify-content-center mt-3 login_container">
-                     <input type="submit" class="btn login_btn spinner-border spinner-border-sm" value="Iniciar Sesión"/>
+							<button class="button" >
+<i class="loading-icon fa fa-spinner fa-spin hide"></i>
+<span class="btn_tex">Iniciar Sesión</span>
+</button>
 					
 				   </div>
+				   <script>
+					   $(document).ready (function(){
+						   $(".button").on("click", function(){
+                           $(".result").text("");
+						   $(".loading-icon").removeClass("hide");
+						   });
+					   });
+					   </script>
 					</form>
 				</div>
 		
