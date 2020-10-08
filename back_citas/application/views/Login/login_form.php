@@ -7,6 +7,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 	<link rel="stylesheet" href="<?php echo base_url().'assets/css/main.css';?>" >
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 </head>
 <!--Coded with love by Mutiullah Samim-->
 <body background="<?php echo base_url().'assets/img/fondo.jpg';?>"  class="img-responsive">
@@ -33,11 +34,44 @@
 							</div>
 							<input type="password" name="user_password" class="form-control input_pass" placeholder="Escribe tu password" required="">
 						</div>
-						
+						<style>
+							.button
+							{
+								background-color: #0B73EF;
+								border:none;
+								color:white;
+								padding: 15px 32px;
+								text-align: center;
+								text-decoration: none;
+								display: inline-block;
+								font-size: 16px;
+								margin: 4px 2px;
+								cursor: pointer;
+							}
+							
+								.button:disabled
+								{
+									opacity:0.5;
+								}
+							.hide {
+								display: none;
+							}
+							</style>
 							<div class="d-flex justify-content-center mt-3 login_container">
-                     <input type="submit" class="btn login_btn spinner-border spinner-border-sm" value="Iniciar Sesión"/>
+							<button class="button" >
+<i class="loading-icon fa fa-spinner fa-spin hide"></i>
+<span class="btn_tex">Iniciar Sesión</span>
+</button>
 					
 				   </div>
+				   <script>
+					   $(document).ready (function(){
+						   $(".button").on("click", function(){
+                           $(".result").text("");
+						   $(".loading-icon").removeClass("hide");
+						   });
+					   });
+					   </script>
 					</form>
 				</div>
 		
