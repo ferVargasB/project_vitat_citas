@@ -23,7 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://localhost/project_vitat_citas/back_citas/';
+$config['base_url'] = 'http://localhost/project_vitat_citas/app/';
 
 /*
 |--------------------------------------------------------------------------
