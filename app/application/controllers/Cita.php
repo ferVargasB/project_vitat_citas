@@ -34,7 +34,7 @@ class Cita extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('welcome_message');
+		$this->load->view('welcome-vitat');
 	}
 
 	public function get_citas_dia($fecha_solicitada, $id_tramite)
