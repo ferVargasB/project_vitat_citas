@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://kit.fontawesome.com/a8e0a9e3a6.js" crossorigin="anonymous" ></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <title>VITAT | Bienvenido</title>
+  </head>
+    <body background="media/Captura.PNG" class="img-responsive">
+        <header id="fondo"  > 
+            <div class="row"  > 
+        
+                <div class="col-md-2 " align="center">
+                    <!-- style="border: 2px solid rgb(55, 0, 255)";----->
+                    
+                    <img class="img-responsive" src="media/logogtoblanco.png" width="111" height="130 "   > 
+                </div>
+                    <div class="col-md-8" align="center">
+                        
+                      <h2  >
+                             <a class=" font: small-caps 100%/200% serif;" style="color:white";> Ventanilla Virtual de Trámites  Administrativos <br> y  Territoriales<br>VITAT</a> 
+                        </h2>
+                 </div>
+                 
+                <div class="col-md-2" align="center" >
+                        <img class="img-responsive" src="media/VITAT logo blanco.png" width="180" height="130 "  > 
+                 </div>
+            </div>  
+            <style>
+          
+        
+                      </style>
+                    </header>
+                   <nav nav class="navbar navbar-expand-md bg-dark navbar-dark" background="media/Captura.PNG">
+                    <!-- Brand -->
+                    <a class="navbar-brand" href="index.html"><i  class="fa fa-home">&nbsp;Inicio</i></a>
+                  
+                    <!-- Toggler/collapsibe Button -->
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                  
+                    <!-- Navbar links -->
+                    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                      <ul class="navbar-nav">
+                        <li class="nav-item">
+                          <a class="nav-link" href="DGMAOT.html">SOBRE LA DGMAOT</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="administracion.html">DIR.ADMINISTRACI&Oacute;N URBANA</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="imagenurbana.html">DIR.IMAGEN URBANA</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Tramites.html">TRAMITES DE LA ADMINISTRACI&Oacute;N</a>
+                          </li>
+                      </ul>
+                    </div>
+                  </nav>
+                  <br>
+                  <div class="container" style="background-color: white;">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <br>
+                        <legend class="text-center header"><h3 >Informaci&oacute;n de Contacto</h3></legend>
+                      </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="container" style="background-color: white;">
+                    <div class="row">
+                      <div class="col-md-2">
+                 
+                      </div>
+                      
+                      <div class="col-md-8">
+                        <form action="http://localhost/project_vitat_citas/back_citas/index.php/Cita/realizar_registro/" id="vitatForm" method="post">
+                        <p><strong>¿Eres Perito?</strong></p>
+<p>
+	Si: <input type="radio" name="eres_perito" value="1" required/>
+	No: <input type="radio" name="eres_perito" value="0"required />
+
+</p>
+                        <div class="form-group"> <!-- Full Name -->
+                          <label for="Nombre_id" class="control-label"><h6> Nombre:</h6></label>
+                          <input type="text" class="form-control" id="Nombre_id" name="Nombre" placeholder="" required>
+                      </div>
+                      <div class="form-group">
+                        <label for="Nombre_id" class="control-label"><h6> Apellidos:</h6></label>
+                        <input type="text" class="form-control" id="apellidos" name="apellidos" placeholder="" required>
+                      </div>  
+                      <div class="form-group"> <!-- Street 1 -->
+                        <label for="Direccion_id" class="control-label"><h6> Direcci&oacute;n:</h6></label>
+                        <input type="text" class="form-control" id="Direccion_id" name="Direccion" placeholder="" required>
+                    </div>  
+                    <div class="form-group"> <!-- Street 2 -->
+                      <label for="numero_id" class="control-label"><h6> N&uacute;mero Telef&oacute;nico</h6></label>
+                      <input type="text" class="form-control" id="numero_id" name="Numero Telefonico" placeholder=""  minlength="10" maxlength="10" required pattern="[0-9]+">
+                  </div> 
+                  <div class="form-group" > <!-- Street 2 -->
+                    <label for="ncorreo_id" class="correo-label" action="16-html5-email-input.php" method="POST"><h6> Correo Electr&oacute;nico</h6></label>
+                    <input type="email" class="form-control" id="correo_id" name="Correo Electronico" placeholder="" required>
+                </div>  
+                
+                <div class="form-group"> <!-- State Button -->
+                  <label for="dirtra_id" class="control-label" ><h6>Direcci&oacute;n de Tr&aacute;mite</h6> </label>
+                  <select class="form-control" name="direccion" id="dirtra_id">
+                      <option value=""  >Selecciona una opción</option>
+                      <option value="1" >Direcci&oacute;n de Imagen Urbana y Gesti&oacute;n de Centro Hist&oacute;rico</option>
+                      <option value="2" >Direcci&oacute;n de Administraci&oacute;n Urbana</option>       
+                  </select>                    
+              </div> 
+              <div class="form-group"> <!-- State Button -->
+                <label for="tramites_imagen" class="control-label"> <h6> Tr&aacute;mite</h6></label>
+                <select class="form-control" name="tipo_tramite" id="tramites_admin_urbana" disabled >
+                    <option value="12">Uso de Suelo</option>
+                    <option value="13">Alineamiento</option>
+                    <option value="14">Clasificaci&oacute;n</option>
+                    <option value="15">Divisi&oacute;n de Predios</option>
+                    <option value="16">Enajenaci&oacute;n de Bienes</option>
+                    </select>    
+                 </div>
+                 <div class="form-group"> <!-- State Button -->
+                  <label for="tramites_admin_urbana" class="control-label"></label>
+                  <select class="form-control" name="tipo_tramite" id="tramites_imagen_urbana"  disabled>
+                      <option value="1">Aviso de Obra Menor.</option>
+                      <option value="2">Permiso de Construcci&oacute;n Menor de 40 M2.</option>
+                      <option value="3">Permiso de Construcci&oacute;n Mayor de 40 M2. </option>
+                      <option value="4">Permiso de Construcci&oacute;n Especial</option>
+                      <option value="5">Aviso de Suspenci&oacute;n Temporal de Obra.</option>
+                      <option value="6">Certificacion de Terminaci&oacute;n De Obra.</option>
+                      <option value="7">Permiso Para Colocaci&oacute;n de Anuncio</option>
+                      <option value="8">Permiso Para Colocaci&oacute;n de Toldo.</option>
+                      <option value="9">Permiso Para Colocaci&oacute;n o Intalaci&oacute;n de Anuncios y/o Espectaculares.</option>
+                      <option value="10">Permiso Para Colocaci&oacute;n de Publicidad M&oacute;vil.</option>
+                      <option value="11">Nuevo ingreso o Refrendo como DRO..</option>
+                      </select>    
+                <br>
+                <div class="mb-3" id="fecha_form">
+                  <label for="fecha"><h6> Escoge tu fecha </h6><span class="text-muted">(click en la fecha para ver el calendario)</span></label>
+                  <input type="date" class="form-control" name="fecha_solicitada" id="fecha"/>
+                  <div class="invalid-feedback">
+                  
+                  </div>
+                </div>
+               
+                <!-- <div class="mb-3">
+                 <label>Hora:</label>
+                 <input type="time" name="hora" class="u-full-width" value="">
+               </div>-->
+               
+
+               <div class="form-group"> <!-- State Button -->
+                   <label for="horas_disponibles" class="control-label"><h6> Horas disponibles</h6></label>
+                   <select class="form-control" name="hora_solicitada" id="horas_disponibles">
+                   </select>    
+               </div>
+               <div class="form-group" align="center"> <!-- Submit Button -->
+                <input type="submit"  class="btn btn-primary" value="Realizar Registro"/>
+            </div>     
+        </div>
+        </form>
+        
+      </div>
+    </div>
+    </div>
+  </div>
+<br> 
+                      </div>
+                      <div class="col-md-2">
+                   
+                      </div>
+                    </div>
+                  </div>
+                 
+<footer>
+
+  
+</footer>
+  <script src="./js/vitat.js"></script>
+  </body>
+  </html>

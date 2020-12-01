@@ -69,6 +69,11 @@ class Cita extends CI_Controller {
 		die();
 	}
 
+	public function crear()
+	{
+		$this->load->view('crear-cita-form');
+	}
+
 	public function realizar_registro()
 	{
 
